@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-bom', version: '1.11.853', ext: 'pom'
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-dynamodb', version: '1.11.853'
+}
+
+application {
+    mainClassName = 'example.DynamoDBMapperQueryScanExample'
+}
